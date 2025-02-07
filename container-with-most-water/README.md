@@ -16,6 +16,7 @@ Explanation: The above vertical lines are represented by array [1,8,6,2,5,4,8,3,
 ## 思考一
 ### 1 
 | i | j | --> | s |
+| --- | --- | --- | --- |
 | 1 | 8 | --> | 1 |
 | 8 | 6 | --> | 6 |
 | 6 | 2 | --> | 2 |
@@ -27,6 +28,7 @@ Explanation: The above vertical lines are represented by array [1,8,6,2,5,4,8,3,
 
 ### 2 
 | i | j | --> | s |
+| --- | --- | --- | --- |
 | 1 | 6 | --> | 1 |
 | 8 | 2 | --> | 2 |
 | 6 | 5 | --> | 5 |
@@ -37,6 +39,7 @@ Explanation: The above vertical lines are represented by array [1,8,6,2,5,4,8,3,
 
 ### 3 
 | i | j | --> | s |
+| --- | --- | --- | --- |
 | 1 | 2 | --> | 1 |
 | 8 | 5 | --> | 5 |
 | 6 | 4 | --> | 4 |
@@ -46,6 +49,7 @@ Explanation: The above vertical lines are represented by array [1,8,6,2,5,4,8,3,
 
 ### 4
 | i | j | --> | s |
+| --- | --- | --- | --- |
 | 1 | 5 | --> | 1 |
 | 8 | 4 | --> | 5 |
 | 6 | 8 | --> | 4 |
@@ -54,6 +58,7 @@ Explanation: The above vertical lines are represented by array [1,8,6,2,5,4,8,3,
 
 ### 5
 | i | j | --> | s |
+| --- | --- | --- | --- |
 | 1 | 4 | --> | 1 |
 | 8 | 8 | --> | 8 |
 | 6 | 3 | --> | 3 |
@@ -61,17 +66,20 @@ Explanation: The above vertical lines are represented by array [1,8,6,2,5,4,8,3,
 
 ### 6
 | i | j | --> | s |
+| --- | --- | --- | --- |
 | 1 | 8 | --> | 1 |
 | 8 | 3 | --> | 3 |
 | 6 | 7 | --> | 6 |
 
 ### 7
 | i | j | --> | s |
+| --- | --- | --- | --- |
 | 1 | 3 | --> | 1 |
 | 8 | 7 | --> | 7 |
 
 ### 8
 | i | j | --> | s |
+| --- | --- | --- | --- |
 | 1 | 7 | --> | 1 |
 
 ## 思考二
