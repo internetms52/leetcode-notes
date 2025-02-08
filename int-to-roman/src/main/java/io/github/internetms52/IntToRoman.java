@@ -17,7 +17,7 @@ public class IntToRoman {
     }
 
     String romanConvertRecursively(int num) {
-        String result = "";
+        StringBuilder result = new StringBuilder();
         int numLength = String.valueOf(num).toCharArray().length;
         for (int i = 0; i < numLength; i++) {
             int d = getByDecimalPlaces(i, num);
@@ -27,29 +27,29 @@ public class IntToRoman {
             for (int j = 0; j < romanNums.length; j++) {
                 int tenBaseNum = revertTenBaseNum(i, d);
                 if (romanNums[j] == tenBaseNum) {
-                    result = romanWords[j] + result;
+                    result.insert(0, romanWords[j]);
                     break;
                 }
                 if (romanNums[j] > tenBaseNum) {
                     if (d == 4 || d == 9) {
                         int remains = romanNums[j] - tenBaseNum;
                         if (remains > 0) {
-                            result = romanConvertRecursively(remains) + romanWords[j] + result;
+                            result.insert(0, romanConvertRecursively(remains) + romanWords[j]);
                             break;
                         }
                     }
                     if (j - 1 >= 0) {
                         int remains = tenBaseNum - romanNums[j - 1];
-                        result = romanWords[j - 1] + romanConvertRecursively(remains) + result;
+                        result.insert(0, romanWords[j - 1] + romanConvertRecursively(remains));
                         break;
                     }
                 } else if (j + 1 == romanNums.length) {
                     int remains = tenBaseNum - romanNums[j];
-                    result = romanWords[j] + romanConvertRecursively(remains) + result;
+                    result.insert(0, romanWords[j] + romanConvertRecursively(remains));
                     break;
                 }
             }
         }
-        return result;
+        return result.toString();
     }
 }
