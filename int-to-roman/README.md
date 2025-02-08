@@ -24,7 +24,7 @@ Note: 49 is not 1 (I) less of 50 (L) because the conversion is based on decimal 
 |-----| --- | ---  | ---  | ---   | ---   | ---  |
 | I   | V   | X   | L   | C   | D   | M   |      |
 
-### decimal extract
+### Decimal Extract
 3746 / 1000 % 10 = 3 \
 3746 / 100 % 10 = 7 \
 3746 / 10 % 10 = 4 \
