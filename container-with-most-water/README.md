@@ -83,10 +83,10 @@ Explanation: The above vertical lines are represented by array [1,8,6,2,5,4,8,3,
 | 1 | 7 | --> | 1 |
 
 ## 思考二
-r = min(i,j) * w
-w為間距，間距有上限，固定i,r/h[i]會得到可能的w
-i跟j取小，所以就算j比較大也是算i，除非j比較小
-如果j比較小，那他也不可能乘起來更大，所以如果出來可能的w超過最大的w可以直接放棄
+r = min(i,j) * w \
+w為間距，間距有上限，固定i,r/h[i]會得到可能的w \
+i跟j取小，所以就算j比較大也是算i，除非j比較小 \
+如果j比較小，那他也不可能乘起來更大，所以如果出來可能的w超過最大的w可以直接放棄 
 ```
 int maxW = height.length - 1;
 if (height[i] != 0 && result / height[i] > maxW) {
