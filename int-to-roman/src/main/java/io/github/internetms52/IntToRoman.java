@@ -7,8 +7,7 @@ public class IntToRoman {
     public String intToRoman(int num) {
         return romanConvertRecursively(num);
     }
-
-    //max_pow=3
+    
     int getByDecimalPlaces(int power, int num) {
         return num / Double.valueOf(Math.pow(10, power)).intValue() % 10;
     }
