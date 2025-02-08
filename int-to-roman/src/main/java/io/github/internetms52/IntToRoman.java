@@ -18,7 +18,7 @@ public class IntToRoman {
 
     String romanConvertRecursively(int num) {
         StringBuilder result = new StringBuilder();
-        int numLength = String.valueOf(num).toCharArray().length;
+        int numLength = String.valueOf(num).length();
         for (int i = 0; i < numLength; i++) {
             int d = getByDecimalPlaces(i, num);
             if (d == 0) {
