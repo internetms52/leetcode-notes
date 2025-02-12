@@ -1,30 +1,43 @@
 package io.github.internetms52;
 
 import java.util.*;
-import java.util.stream.Collectors;
 
 public class ThreeSum {
     public List<List<Integer>> threeSum(int[] nums) {
         return process(nums);
     }
 
+    public HashMap<Integer, Set<Integer>> getValueIndexMap(int[] nums) {
+        HashMap<Integer, Set<Integer>> valueIndexMap = new HashMap();
+        for (int i = 0; i < nums.length; i++) {
+            if (valueIndexMap.containsKey(nums[i])) {
+                Set<Integer> indexSet = new HashSet<>(valueIndexMap.get(nums[i]));
+                indexSet.add(i);
+                valueIndexMap.put(nums[i], indexSet);
+            } else {
+                valueIndexMap.put(nums[i], Set.of(i));
+            }
+        }
+        return valueIndexMap;
+    }
+
     public List<List<Integer>> process(int[] nums) {
         List<List<Integer>> resultList = new ArrayList();
-        int[] sortedNums = Arrays.stream(nums).sorted().toArray();
-
-        for (int fixIdx = 0; fixIdx < nums.length; fixIdx++) {
-            for (int i = fixIdx + 1; i < nums.length; i++) {
-                int sum1 = nums[fixIdx] + nums[i];
-                for (int j = i + 1; j < nums.length; j++) {
-                    if (sum1 > 0 && nums[j] > 0) {
-                        continue;
-                    }
-                    if (sum1 < 0 && nums[j] < 0) {
-                        continue;
-                    }
-                    if (sum1 + nums[j] == 0) {
-                        resultList.add(List.of(nums[fixIdx], nums[i], nums[j]));
-                        break;
+        HashMap<Integer, Set<Integer>> valueIndexMap = getValueIndexMap(nums);
+        for (int i = 0; i < nums.length; i++) {
+            for (int j = i + 1; j < nums.length; j++) {
+                int sum = nums[i] + nums[j];
+                if (valueIndexMap.containsKey(-sum)) {
+                    Set<Integer> indexSet = valueIndexMap.get(-sum);
+                    if (indexSet.size() > 0) {
+                        List<Integer> indexList = new ArrayList<>(indexSet);
+                        for (int k = 0; k < indexList.size(); k++) {
+                            if (indexList.get(k) != i && indexList.get(k) != j) {
+                                int target = nums[indexList.get(k)];
+                                resultList.add(List.of(nums[i], nums[j], target));
+                                break;
+                            }
+                        }
                     }
                 }
             }
