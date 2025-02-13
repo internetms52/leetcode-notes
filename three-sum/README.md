@@ -22,7 +22,7 @@ Explanation: The only possible triplet does not sum up to 0.
 - 雖然是N^3但分析起來只要遍歷上三角，所以應該不會太慢
 
 ## Claude 檢討：
-這題答案的測資沒有N^3的生存空間，所以這一題只能是用排序後雙指針完成，其它答案都不會被leetcode接受
+這題答案的測資沒有N^3的生存空間，所以這一題只能是用排序後雙指針完成，其它答案都不會被leetcode接受\
 是非常沒有空間的一題
 
 ### 原答案:
