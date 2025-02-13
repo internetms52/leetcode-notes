@@ -7,10 +7,6 @@ import java.util.List;
 
 public class ThreeSumN2_1 {
 
-    public List<List<Integer>> threeSum(int[] nums) {
-        return process(nums);
-    }
-
     public List<List<Integer>> process(int[] nums) {
         int[] sortedNums = Arrays.stream(nums).sorted().toArray();
         return processSortedNums(sortedNums);
@@ -42,21 +38,6 @@ public class ThreeSumN2_1 {
                 }
                 if (sum < 0) {
                     leftIdx += 1;
-                }
-            }
-        }
-        return resultList;
-    }
-
-    public List<List<Integer>> removeDuplicateList(List<List<Integer>> numList) {
-        List<List<Integer>> resultList = new ArrayList(numList);
-        for (int i = 0; i < numList.size(); i++) {
-            HashSet<Integer> iSet = new HashSet<>(numList.get(i));
-            for (int j = i + 1; j < numList.size(); j++) {
-                HashSet<Integer> jSet = new HashSet<>(numList.get(j));
-                if (iSet.equals(jSet)) {
-                    resultList.remove(numList.get(i));
-                    break;
                 }
             }
         }

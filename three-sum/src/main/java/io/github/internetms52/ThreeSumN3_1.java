@@ -7,10 +7,6 @@ import java.util.List;
 
 public class ThreeSumN3_1 {
 
-    public List<List<Integer>> threeSum(int[] nums) {
-        return process(nums);
-    }
-
     public List<List<Integer>> process(int[] nums) {
         List<List<Integer>> resultList = new ArrayList();
         int[] sortedNums = Arrays.stream(nums).sorted().toArray();
