@@ -9,7 +9,8 @@ import java.util.List;
 
 public class ThreeSumTest {
 //    ThreeSum threeSum = new ThreeSum();
-    ThreeSumN3_1 threeSum = new ThreeSumN3_1();
+//    ThreeSumN3_1 threeSum = new ThreeSumN3_1();
+    ThreeSumN2_1 threeSum = new ThreeSumN2_1();
     public boolean checkExists(List<List<Integer>> resultList, List<List<Integer>> targetList) {
         int count = 0;
         for (List<Integer> result : resultList) {
