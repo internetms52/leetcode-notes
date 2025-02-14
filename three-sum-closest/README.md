@@ -21,19 +21,19 @@ Explanation: The sum that is closest to the target is 0. (0 + 0 + 0 = 0).
 
 ## 兩數距離
 int from, to;\
-consider from=-2, to=1
+consider from=-2, to=1\
 1-(-2) = 3, to-from
 
-consider from=-4, to=-1
+consider from=-4, to=-1\
 3, -1-(-4)=3, to-from
 
-consider from=0, to=1
+consider from=0, to=1\
 1, to
 
-consider from=-1, to=0
+consider from=-1, to=0\
 1, -(-1), from
 
-consider from=2, to=4
+consider from=2, to=4\
 2, 4-2, to-from
 
 ### 原答案:
