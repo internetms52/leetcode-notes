@@ -1,16 +1,17 @@
 # 15. 3Sum
-Given an integer array nums, return all the triplets [nums[i], nums[j], nums[k]] such that i != j, i != k, and j != k, and nums[i] + nums[j] + nums[k] == 0.
+Given an integer array nums, return all the triplets [nums[i], nums[j], nums[k]]\
+such that i != j, i != k, and j != k, and nums[i] + nums[j] + nums[k] == 0.
 
 Notice that the solution set must not contain duplicate triplets.
 
 ## Example1:
-Input: nums = [-1,0,1,2,-1,-4]
-Output: [[-1,-1,2],[-1,0,1]]
+Input: nums = [-1,0,1,2,-1,-4]\
+Output: [[-1,-1,2],[-1,0,1]]\
 Explanation:
-nums[0] + nums[1] + nums[2] = (-1) + 0 + 1 = 0.
-nums[1] + nums[2] + nums[4] = 0 + 1 + (-1) = 0.
-nums[0] + nums[3] + nums[4] = (-1) + 2 + (-1) = 0.
-The distinct triplets are [-1,0,1] and [-1,-1,2].
+nums[0] + nums[1] + nums[2] = (-1) + 0 + 1 = 0.\
+nums[1] + nums[2] + nums[4] = 0 + 1 + (-1) = 0.\
+nums[0] + nums[3] + nums[4] = (-1) + 2 + (-1) = 0.\
+The distinct triplets are [-1,0,1] and [-1,-1,2].\
 Notice that the order of the output and the order of the triplets does not matter.
 
 ## Example2:
@@ -22,7 +23,7 @@ Explanation: The only possible triplet does not sum up to 0.
 - 雖然是N^3但分析起來只要遍歷上三角，所以應該不會太慢
 
 ## Claude 檢討：
-這題答案的測資沒有N^3的生存空間，所以這一題只能是用排序後雙指針完成，其它答案都不會被leetcode接受 
+這題答案的測資沒有N^3的生存空間，所以這一題只能是用排序後雙指針完成，其它答案都不會被leetcode接受\
 是非常沒有空間的一題
 
 ### 原答案:
