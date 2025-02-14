@@ -28,9 +28,6 @@ public class ThreeSumClosest {
         for (int i = 0; i < nums.length - 2; i++) {
             int leftIdx = i + 1;
             int rightIdx = nums.length - 1;
-            if (i > 0 && nums[i] == nums[i - 1]) {
-                continue;
-            }
             while (leftIdx < rightIdx) {
                 int sum = nums[i] + nums[leftIdx] + nums[rightIdx];
                 int diff = getDistance(sum, target);
