@@ -26,9 +26,27 @@ public class FourSumTest {
         } else {
             List<List<Integer>> sortedResultList = resultList.stream().map(list -> {
                 return list.stream().sorted().collect(Collectors.toList());
+            }).sorted((list1, list2) -> {
+                if (list1.size() != list2.size()) {
+                    return Integer.compare(list1.size(), list2.size());
+                }
+                for (int i = 0; i < list1.size(); i++) {
+                    int compare = list1.get(i).compareTo(list2.get(i));
+                    if (compare != 0) return compare;
+                }
+                return 0;
             }).toList();
             List<List<Integer>> sortedTargetList = targetList.stream().map(list -> {
                 return list.stream().sorted().collect(Collectors.toList());
+            }).sorted((list1, list2) -> {
+                if (list1.size() != list2.size()) {
+                    return Integer.compare(list1.size(), list2.size());
+                }
+                for (int i = 0; i < list1.size(); i++) {
+                    int compare = list1.get(i).compareTo(list2.get(i));
+                    if (compare != 0) return compare;
+                }
+                return 0;
             }).toList();
             for (int i = 0; i < resultList.size(); i++) {
                 if (!check(sortedTargetList.get(i), sortedResultList.get(i))) {
