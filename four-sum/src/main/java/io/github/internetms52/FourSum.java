@@ -11,7 +11,7 @@ public class FourSum {
     }
 
     public List<List<Integer>> fourSumSolution(int[] nums, int target) {
-        List<List<Integer>> resultList = new ArrayList();
+        List<List<Integer>> resultList = new ArrayList<>();
         for (int i = 0; i < nums.length; i++) {
             if (i > 0 && nums[i] == nums[i - 1]) {
                 continue;
