@@ -1,5 +1,6 @@
 package io.github.internetms52;
 
+import hobby.internetms52.leetcode.validation.ListOfIntegerLists;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -11,19 +12,6 @@ public class ThreeSumTest {
 //    ThreeSum threeSum = new ThreeSum();
 //    ThreeSumN3_1 threeSum = new ThreeSumN3_1();
     ThreeSumN2_1 threeSum = new ThreeSumN2_1();
-    public boolean checkExists(List<List<Integer>> resultList, List<List<Integer>> targetList) {
-        int count = 0;
-        for (List<Integer> result : resultList) {
-            HashSet<Integer> rSet = new HashSet<>(result);
-            for (List<Integer> target : targetList) {
-                HashSet<Integer> jSet = new HashSet<>(target);
-                if (rSet.equals(jSet)) {
-                    count++;
-                }
-            }
-        }
-        return count==resultList.size() && resultList.size()==targetList.size();
-    }
 
     @Test
     public void test1() {
@@ -31,7 +19,7 @@ public class ThreeSumTest {
         List<List<Integer>> answerList = new ArrayList<>();
         answerList.add(List.of(-1, 2, -1));
         answerList.add(List.of(0, 1, -1));
-        Assertions.assertTrue(checkExists(result, answerList));
+        Assertions.assertTrue(ListOfIntegerLists.isMutualContainment(result, answerList));
     }
 
     @Test
@@ -39,13 +27,12 @@ public class ThreeSumTest {
         List<List<Integer>> result = threeSum.process(new int[]{0,0,0});
         List<List<Integer>> answerList = new ArrayList<>();
         answerList.add(List.of(0, 0, 0));
-        Assertions.assertTrue(checkExists(result, answerList));
+        Assertions.assertTrue(ListOfIntegerLists.isMutualContainment(result, answerList));
     }
 
     @Test
     public void test3() {
         List<List<Integer>> result = threeSum.process(new int[]{-9, -14, -3, 2, 0, -11, -5, 11, 5, -5, 4, -4, 5, -15, 14, -8, -11, 10, -6, 1, -14, -12, -13, -11, 9, -7, -2, -13, 2, 2, -15, 1, 3, -3, -12, -12, 1, -2, 6, 14, 0, -4, -13, -10, -12, 8, -2, -8, 3, -1, 8, 4, -6, 2, 1, 10, 2, 14, 4, 12, 1, 4, -2, 11, 9, -7, 6, -13, 7, -3, 8, 14, 8, 10, 12, 11, -4, -13, 10, 14, 1, -4, -4, 2, 5, 4, -11, -7, 3, 8, -10, 11, -11, -5, 7, 13, 3, -2, 8, -13, 2, 1, 9, -12, -11, 6});
-        List<List<Integer>> answerList = new ArrayList<>();
         Assertions.assertEquals(118, result.size());
     }
 
@@ -64,6 +51,6 @@ public class ThreeSumTest {
         List<List<Integer>> result = threeSum.process(new int[]{-1,0,1});
         List<List<Integer>> answerList = new ArrayList<>();
         answerList.add(List.of(-1,0,1));
-        Assertions.assertTrue(checkExists(result, answerList));
+        Assertions.assertTrue(ListOfIntegerLists.isMutualContainment(result, answerList));
     }
 }
