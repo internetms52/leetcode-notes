@@ -10,6 +10,6 @@ public class RemoveNthNodeFromEndOfListTest {
     @Test
     public void case1() {
         ListNode resultListNode = rnnfeol.removeNthFromEnd(case1Data(), 2);
-        
+
     }
 }
