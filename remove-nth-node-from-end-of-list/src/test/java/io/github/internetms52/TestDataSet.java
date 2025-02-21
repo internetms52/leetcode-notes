@@ -26,4 +26,16 @@ public class TestDataSet {
                 )
         );
     }
+
+    public static ListNode case2Given() {
+        return new ListNode(1);
+    }
+
+    public static ListNode case3Given() {
+        return new ListNode(1, new ListNode(2, null));
+    }
+
+    public static ListNode case3Ans() {
+        return new ListNode(1, null);
+    }
 }
