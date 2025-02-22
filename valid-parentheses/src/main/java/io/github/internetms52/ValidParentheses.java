@@ -6,19 +6,19 @@ public class ValidParentheses {
     Stack<Character> st = new Stack<>();
     String openBrackets = "([{";
     String closeBrackets = ")]}";
+
     public boolean isValid(String s) {
-        for(int i=0;i<s.length();i++){
+        for (int i = 0; i < s.length(); i++) {
             char c = s.charAt(i);
-            if(st.isEmpty()){
+            if (st.isEmpty()) {
                 st.push(c);
-            }else{
-                if(openBrackets.indexOf(c)>=0){
+            } else {
+                if (openBrackets.indexOf(c) >= 0) {
                     st.push(c);
-                }else{
+                } else {
                     int idxOfClose = closeBrackets.indexOf(c);
-                    if(!st.pop().equals(openBrackets.charAt(idxOfClose))){
-                        st.push(c);
-                        break;
+                    if (!st.pop().equals(openBrackets.charAt(idxOfClose))) {
+                        return false;
                     }
                 }
             }
