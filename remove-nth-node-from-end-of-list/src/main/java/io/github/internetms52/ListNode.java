@@ -2,7 +2,7 @@ package io.github.internetms52;
 
 public class ListNode implements Comparable<ListNode> {
     int val;
-    ListNode next;
+    public ListNode next;
 
     ListNode() {
     }
