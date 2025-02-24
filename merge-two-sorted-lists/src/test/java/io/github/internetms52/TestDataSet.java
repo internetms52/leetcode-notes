@@ -50,4 +50,57 @@ public class TestDataSet {
     public static ListNode case3Ans() {
         return new ListNode(1, new ListNode(2, new ListNode(4, new ListNode(5, null))));
     }
+
+    public static ListNode case6Given1() {
+        return new ListNode(-2, new ListNode(5, null));
+    }
+
+    public static ListNode case6Given2() {
+        return new ListNode(
+                -9,
+                new ListNode(
+                        -6,
+                        new ListNode(
+                                -3,
+                                new ListNode(
+                                        -1,
+                                        new ListNode(
+                                                1,
+                                                new ListNode(
+                                                        6, null
+                                                )
+                                        )
+                                )
+                        )
+                )
+        );
+    }
+
+    public static ListNode case6Ans() {
+        return new ListNode(
+                -9,
+                new ListNode(
+                        -6,
+                        new ListNode(
+                                -3,
+                                new ListNode(
+                                        -2,
+                                        new ListNode(
+                                                -1,
+                                                new ListNode(
+                                                        1,
+                                                        new ListNode(
+                                                                5,
+                                                                new ListNode(
+                                                                        6, null
+                                                                )
+                                                        )
+                                                )
+                                        )
+                                )
+                        )
+                )
+
+        );
+    }
 }

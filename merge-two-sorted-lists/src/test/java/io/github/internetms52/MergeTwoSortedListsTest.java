@@ -36,4 +36,10 @@ public class MergeTwoSortedListsTest {
         Assertions.assertTrue(ListNodeValidation.areEquivalent(new ListNode(0), resultListNode));
     }
 
+    @Test
+    public void case6() {
+        ListNode resultListNode = mergeTwoSortedLists.mergeTwoLists(TestDataSet.case6Given1(), TestDataSet.case6Given2());
+        Assertions.assertTrue(ListNodeValidation.areEquivalent(TestDataSet.case6Ans(), resultListNode));
+    }
+
 }
