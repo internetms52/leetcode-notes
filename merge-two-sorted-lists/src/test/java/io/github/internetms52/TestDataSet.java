@@ -1,16 +1,22 @@
 package io.github.internetms52;
 
 public class TestDataSet {
-    public static ListNode case1Given() {
+    static ListNode case1Given1() {
         return new ListNode(
                 1,
                 new ListNode(
                         2,
-                        new ListNode(3,
-                                new ListNode(4,
-                                        new ListNode(5, null)
-                                )
-                        )
+                        new ListNode(4, null)
+                )
+        );
+    }
+
+    static ListNode case1Given2() {
+        return new ListNode(
+                1,
+                new ListNode(
+                        3,
+                        new ListNode(4, null)
                 )
         );
     }
@@ -19,23 +25,21 @@ public class TestDataSet {
         return new ListNode(
                 1,
                 new ListNode(
-                        2,
-                        new ListNode(3,
-                                new ListNode(5, null)
+                        1,
+                        new ListNode(
+                                2,
+                                new ListNode(
+                                        3,
+                                        new ListNode(
+                                                4,
+                                                new ListNode(
+                                                        4,
+                                                        null
+                                                )
+                                        )
+                                )
                         )
                 )
         );
-    }
-
-    public static ListNode case2Given() {
-        return new ListNode(1);
-    }
-
-    public static ListNode case3Given() {
-        return new ListNode(1, new ListNode(2, null));
-    }
-
-    public static ListNode case3Ans() {
-        return new ListNode(1, null);
     }
 }
