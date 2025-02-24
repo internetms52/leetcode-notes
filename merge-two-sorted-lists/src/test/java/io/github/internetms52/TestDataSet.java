@@ -42,4 +42,12 @@ public class TestDataSet {
                 )
         );
     }
+
+    public static ListNode case2Ans() {
+        return new ListNode(1, new ListNode(2, null));
+    }
+
+    public static ListNode case3Ans() {
+        return new ListNode(1, new ListNode(2, new ListNode(4, new ListNode(5, null))));
+    }
 }

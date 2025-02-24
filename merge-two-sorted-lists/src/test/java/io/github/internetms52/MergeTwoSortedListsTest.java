@@ -15,12 +15,25 @@ public class MergeTwoSortedListsTest {
     @Test
     public void case2() {
         ListNode resultListNode = mergeTwoSortedLists.mergeTwoLists(new ListNode(2), new ListNode(1));
-        Assertions.assertEquals(0, resultListNode.compareTo(TestDataSet.case1Ans()));
+        Assertions.assertTrue(ListNodeValidation.areEquivalent(TestDataSet.case2Ans(), resultListNode));
     }
 
     @Test
     public void case3() {
         ListNode resultListNode = mergeTwoSortedLists.mergeTwoLists(new ListNode(5), TestDataSet.case1Given1());
-        Assertions.assertEquals(0, resultListNode.compareTo(TestDataSet.case1Ans()));
+        Assertions.assertTrue(ListNodeValidation.areEquivalent(TestDataSet.case3Ans(), resultListNode));
     }
+
+    @Test
+    public void case4() {
+        ListNode resultListNode = mergeTwoSortedLists.mergeTwoLists(null, null);
+        Assertions.assertNull(resultListNode);
+    }
+
+    @Test
+    public void case5() {
+        ListNode resultListNode = mergeTwoSortedLists.mergeTwoLists(null, new ListNode(0));
+        Assertions.assertTrue(ListNodeValidation.areEquivalent(new ListNode(0), resultListNode));
+    }
+
 }
