@@ -23,7 +23,6 @@ public class GenerateParenthesesN4 {
                 resultSet.add("("+str+")");
             }
             if(n>2){
-                Set<String> reduceGroupSet = new HashSet();
                 for(int i=2;i<n;i++){
                     Set<String> iSet = generateParenthesisRecursively(n-i);
                     for(int j=2;j<n;j++){
