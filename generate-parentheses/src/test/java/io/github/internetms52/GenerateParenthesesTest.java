@@ -10,10 +10,16 @@ public class GenerateParenthesesTest {
     GenerateParenthesesN3 generateParenthesesN3 = new GenerateParenthesesN3();
 
     @Test
-    public void case2() {
+    public void case1() {
         List<String> ansList = List.of("((((()))))", "(((()())))", "(((())()))", "(((()))())", "(((())))()", "((()(())))", "((()()()))", "((()())())", "((()()))()", "((())(()))", "((())()())", "((())())()", "((()))(())", "((()))()()", "(()((())))", "(()(()()))", "(()(())())", "(()(()))()", "(()()(()))", "(()()()())", "(()()())()", "(()())(())", "(()())()()", "(())((()))", "(())(()())", "(())(())()", "(())()(())", "(())()()()", "()(((())))", "()((()()))", "()((())())", "()((()))()", "()(()(()))", "()(()()())", "()(()())()", "()(())(())", "()(())()()", "()()((()))", "()()(()())", "()()(())()", "()()()(())", "()()()()()");
-        List<String> resultList = generateParenthesesN3.generateParenthesis(5);
+        List<String> resultList = generateParentheses.generateParenthesis(5);
         Assertions.assertTrue(resultList.containsAll(ansList));
         Assertions.assertEquals(resultList.size(), ansList.size());
+    }
+
+    @Test
+    public void case2() {
+        List<String> resultList = generateParentheses.generateParenthesis(3);
+        System.out.println(resultList);
     }
 }
