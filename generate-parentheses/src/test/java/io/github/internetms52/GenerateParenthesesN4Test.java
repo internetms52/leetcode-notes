@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 import java.util.List;
 
 public class GenerateParenthesesN4Test {
-    GenerateParentheses generateParentheses = new GenerateParentheses();
+    GenerateParenthesesBacktrack generateParentheses = new GenerateParenthesesBacktrack();
 
     @Test
     public void case2() {
