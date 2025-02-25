@@ -5,7 +5,7 @@
   <artifactId>letter-combinations-of-a-phone-number</artifactId>
   <packaging>jar</packaging>
   <version>1.0-SNAPSHOT</version>
-  <name>roman-to-int</name>
+  <name>letter-combinations-of-a-phone-number</name>
   <url>http://maven.apache.org</url>
   <properties>
     <maven.compiler.source>17</maven.compiler.source>

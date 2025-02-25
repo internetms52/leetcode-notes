@@ -5,7 +5,7 @@
   <artifactId>logest-common-prefix</artifactId>
   <packaging>jar</packaging>
   <version>1.0-SNAPSHOT</version>
-  <name>roman-to-int</name>
+  <name>logest-common-prefix</name>
   <url>http://maven.apache.org</url>
   <properties>
     <maven.compiler.source>17</maven.compiler.source>
