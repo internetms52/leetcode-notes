@@ -7,12 +7,12 @@ import java.util.List;
 
 public class GenerateParenthesesTest {
     GenerateParenthesesBacktrack generateParentheses = new GenerateParenthesesBacktrack();
-    GenerateParenthesesN4 generateParenthesesN4 = new GenerateParenthesesN4();
+    GenerateParenthesesN3 generateParenthesesN3 = new GenerateParenthesesN3();
 
     @Test
     public void case2() {
         List<String> ansList = List.of("((((()))))", "(((()())))", "(((())()))", "(((()))())", "(((())))()", "((()(())))", "((()()()))", "((()())())", "((()()))()", "((())(()))", "((())()())", "((())())()", "((()))(())", "((()))()()", "(()((())))", "(()(()()))", "(()(())())", "(()(()))()", "(()()(()))", "(()()()())", "(()()())()", "(()())(())", "(()())()()", "(())((()))", "(())(()())", "(())(())()", "(())()(())", "(())()()()", "()(((())))", "()((()()))", "()((())())", "()((()))()", "()(()(()))", "()(()()())", "()(()())()", "()(())(())", "()(())()()", "()()((()))", "()()(()())", "()()(())()", "()()()(())", "()()()()()");
-        List<String> resultList = generateParenthesesN4.generateParenthesis(5);
+        List<String> resultList = generateParenthesesN3.generateParenthesis(5);
         Assertions.assertTrue(resultList.containsAll(ansList));
         Assertions.assertEquals(resultList.size(), ansList.size());
     }

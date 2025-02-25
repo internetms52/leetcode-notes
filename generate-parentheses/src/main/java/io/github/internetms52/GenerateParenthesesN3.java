@@ -5,7 +5,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-public class GenerateParenthesesN4 {
+public class GenerateParenthesesN3 {
 
     public List<String> generateParenthesis(int n) {
         return new ArrayList<>(generateParenthesisRecursively(n));
