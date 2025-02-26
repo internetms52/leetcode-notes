@@ -1,5 +1,7 @@
 package io.github.internetms52;
 
+import hobby.internetms52.leetcode.definition.ListNode;
+
 public class TestDataSet {
     static ListNode case1Given1() {
         return new ListNode(

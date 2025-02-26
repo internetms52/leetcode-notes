@@ -1,5 +1,7 @@
 package io.github.internetms52;
 
+import hobby.internetms52.leetcode.definition.ListNode;
+
 public class MergeTwoSortedLists {
     public ListNode mergeTwoLists(ListNode list1, ListNode list2) {
         return sortListNodes(list1, list2);

@@ -1,5 +1,7 @@
 package io.github.internetms52;
 
+import hobby.internetms52.leetcode.definition.ListNode;
+import hobby.internetms52.leetcode.validation.ListNodeValidation;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
