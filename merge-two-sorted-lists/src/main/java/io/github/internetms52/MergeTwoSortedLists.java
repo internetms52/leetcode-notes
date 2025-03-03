@@ -4,18 +4,18 @@ import hobby.internetms52.leetcode.definition.ListNode;
 
 public class MergeTwoSortedLists {
     public ListNode mergeTwoLists(ListNode list1, ListNode list2) {
-        return sortListNodes(list1, list2);
+        return mergeSortedListNodes(list1, list2);
     }
 
-    public ListNode sortListNodes(ListNode list1, ListNode list2) {
+    public ListNode mergeSortedListNodes(ListNode list1, ListNode list2) {
         ListNode result;
         if (list1 != null && list2 != null) {
             if (list1.val < list2.val) {
                 result = newNode(list1.val);
-                result.next = sortListNodes(list1.next, list2);
+                result.next = mergeSortedListNodes(list1.next, list2);
             } else {
                 result = newNode(list2.val);
-                result.next = sortListNodes(list1, list2.next);
+                result.next = mergeSortedListNodes(list1, list2.next);
             }
         } else if (list1 != null) {
             return list1;
