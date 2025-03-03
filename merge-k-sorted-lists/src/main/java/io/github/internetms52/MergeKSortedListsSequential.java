@@ -5,6 +5,7 @@ import hobby.internetms52.leetcode.definition.ListNode;
 public class MergeKSortedListsSequential {
     MergeTwoSortedLists mergeTwoSortedLists = new MergeTwoSortedLists();
 
+    @Deprecated
     public ListNode mergeKLists(ListNode[] lists) {
         ListNode resultListNode = null;
         for (int i = 0; i < lists.length; i++) {
