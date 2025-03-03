@@ -27,7 +27,7 @@ Output: [0]
 - 似乎我對於這種ListNode的資料結構不太熟悉，造成我在判斷用哪一種解法的時候選擇上有問題
 - 不知道有沒有一些指標可以拿來確定應該要用哪一種解解看的，不然走錯路有點花時間
 
-## 遞迴圖:
+## 示意圖:
 ```mermaid
 flowchart TD
   root(("SortList[[1,2,4][1,3,4]]<br>compare(1,1)"))-->A["choose 1 as left node."]:::yellow
