@@ -3,8 +3,13 @@ package io.github.internetms52;
 import hobby.internetms52.leetcode.definition.ListNode;
 
 public class MergeKSortedListsDivide {
-    MergeTwoSortedLists mergeTwoSortedLists = new MergeTwoSortedLists();
-    private ListNode mergeKListsHelper(ListNode[] lists, int start, int end) {
+    private static final MergeTwoSortedLists mergeTwoSortedLists = new MergeTwoSortedLists();
+
+    public ListNode mergeKLists(ListNode[] lists) {
+        return mergeKLists(lists, 0, lists.length - 1);
+    }
+
+    private ListNode mergeKLists(ListNode[] lists, int start, int end) {
         if(lists.length==0){
             return null;
         }
@@ -16,8 +21,8 @@ public class MergeKSortedListsDivide {
         }
 
         int mid = start + (end - start) / 2;
-        ListNode left = mergeKListsHelper(lists, start, mid);
-        ListNode right = mergeKListsHelper(lists, mid + 1, end);
+        ListNode left = mergeKLists(lists, start, mid);
+        ListNode right = mergeKLists(lists, mid + 1, end);
         return mergeTwoSortedLists.mergeTwoLists(left, right);
     }
 }
