@@ -30,23 +30,17 @@ Output: [0]
 ## 遞迴圖:
 ```mermaid
 flowchart TD
-  root(("SortList[[1,2,4][1,3,4]]"))-->A["compare(1,1)"]
-  A-->B["choose 1 as left node."]:::yellow
-  A-->C["SortList([2,4][1,3,4]) as right node."]
-  C-->D["compare(2,1)"]
-  D-->E["choose 1 as left node."]:::yellow
-  D-->F["SortList([2,4][3,4]) as right node."]
-  F-->G["compare(2,3)"]
-  G-->H["choose 2 as left node."]:::yellow
-  G-->I["SortList([4][3,4]) as right node."]
-  I-->J["compare(4,3)"]
-  J-->K["choose 3 as left node."]:::yellow
-  J-->L["SortList([4][4]) as right node."]
-  L-->M["compare(4,4)"]
-  M-->N["choose 4 as left node."]:::yellow
-  M-->O["SortList([][4]) as right node."]
-  O-->P["compare(null,4)"]
-  P-->Q["list1 is null, return list2[4] as right node."]:::yellow
+  root(("SortList[[1,2,4][1,3,4]]<br>compare(1,1)"))-->A["choose 1 as left node."]:::yellow
+  root-->B["SortList([2,4][1,3,4]).<br>compare(2,1)"]
+  B-->C["choose 1 as left node."]:::yellow
+  B-->D["SortList([2,4][3,4]).<br>compare(2,3)"]
+  D-->E["choose 2 as left node."]:::yellow
+  D-->F["SortList([4][3,4]).<br>compare(4,3)"]
+  F-->G["choose 3 as left node."]:::yellow
+  F-->H["SortList([4][4]).<br>compare(4,4)"]
+  H-->I["choose 4 as left node."]:::yellow
+  H-->J["SortList([][4]).<br>compare(null,4)"]
+  J-->K["list1 is null, return list2[4]."]:::yellow
 
 classDef yellow fill:#FFF0B5,stroke:#333,stroke-width:2px
 ```
