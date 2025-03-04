@@ -21,4 +21,9 @@ Output: [2,1,3]
 ## Thinking:
 - 遞迴解決
   - 遞迴條件，current.next.next以及current.next.next.next不是null
+- 節點替換(A-B-C-D)
+  - Snapshot B
+  - A.next -> C-D
+  - B.next -> A
+- A.next -> C-D 正好可以拿來遞迴
 
