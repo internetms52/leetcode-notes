@@ -22,5 +22,17 @@ Output: [3,2,1,4,5]
   - 但與用stack不同，直接反轉需要檢查是否有k個節點
     - 用於檢查是否有k個節點的開銷仍然比stack操作push跟pop要少
     - 用於push的迴圈其實幾乎就等於檢查是否有k個節點了
+    
+### 指針反轉步驟
+  ```
+  ListNode prev = null;
+  curr = head;
+  for (int i = 0; i < k; i++) {
+    ListNode next = curr.next;
+    curr.next = prev;
+    prev = curr;
+    curr = next;
+  }
+```
 
 
