@@ -7,16 +7,17 @@ import org.junit.jupiter.api.Test;
 
 public class ReverseNodesInKGroupWithStackTest {
     ReverseNodesInKGroupWithStack reverseNodesInKGroupWithStack = new ReverseNodesInKGroupWithStack();
+    ReverseNodesInKGroupWithSimpleLoop reverseNodesInKGroupWithSimpleLoop = new ReverseNodesInKGroupWithSimpleLoop();
 
     @Test
     public void case1() {
-        ListNode result = reverseNodesInKGroupWithStack.reverseKGroup(TestDataSet.case12Given(), TestDataSet.case1GivenK());
+        ListNode result = reverseNodesInKGroupWithSimpleLoop.reverseKGroup(TestDataSet.case12Given(), TestDataSet.case1GivenK());
         Assertions.assertTrue(ListNodeValidation.areEquivalent(result, TestDataSet.case1Ans()));
     }
 
     @Test
     public void case2() {
-        ListNode result = reverseNodesInKGroupWithStack.reverseKGroup(TestDataSet.case12Given(),TestDataSet.case2GivenK());
+        ListNode result = reverseNodesInKGroupWithSimpleLoop.reverseKGroup(TestDataSet.case12Given(),TestDataSet.case2GivenK());
         Assertions.assertTrue(ListNodeValidation.areEquivalent(result, TestDataSet.case2Ans()));
     }
 

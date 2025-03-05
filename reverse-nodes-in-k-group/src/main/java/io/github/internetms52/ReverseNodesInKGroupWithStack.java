@@ -4,6 +4,7 @@ import hobby.internetms52.leetcode.definition.ListNode;
 
 import java.util.Stack;
 
+@Deprecated
 public class ReverseNodesInKGroupWithStack {
     Stack<ListNode> st = new Stack<>();
     public ListNode reverseKGroup(ListNode head, int k) {

@@ -14,10 +14,13 @@ Output: [3,2,1,4,5]
 
 ## Thinking:
 - 遞迴解決
-  - 遞迴條件，current.next.next以及current.next.next.next不是null
-- 節點替換(A-B-C-D)
-  - Snapshot B
-  - A.next -> C-D
-  - B.next -> A
-- A.next -> C-D 正好可以拿來遞迴
+  - 但這次跟swap不一樣，不能固定兩個，所以打算用stack來解決反轉問題
+
+## 學習：
+- 解出來只有6% runtime beats，所以又到了claude檢討的時間。
+- claude表示，反轉節點用不著stack，迴圈就可以搞定了...
+  - 但與用stack不同，直接反轉需要檢查是否有k個節點
+    - 用於檢查是否有k個節點的開銷仍然比stack操作push跟pop要少
+    - 用於push的迴圈其實幾乎就等於檢查是否有k個節點了
+
 
