@@ -16,10 +16,6 @@ Explanation: Your function should return k = 2, with the first two elements of n
 It does not matter what you leave beyond the returned k (hence they are underscores).
 
 ## Thinking:
+- 因為是sorted array，所以理論上一個迴圈就可以搞定了
+- 這一題的要求除了回傳k，也就是unique element count以外，還要把原陣列排整齊，所以要額外做一些處理
 
-
-### Decimal Extract
-3746 / 1000 % 10 = 3 \
-3746 / 100 % 10 = 7 \
-3746 / 10 % 10 = 4 \
-3746 / 1 % 10 = 9
