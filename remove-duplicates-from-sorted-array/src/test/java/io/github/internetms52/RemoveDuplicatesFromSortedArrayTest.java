@@ -12,15 +12,28 @@ public class RemoveDuplicatesFromSortedArrayTest {
     @Test
     void case1() {
         int[] given = TestData.case1Given();
+        int[] ans = TestData.case1Ans();
         int k = rdfsa.removeDuplicates(given);
-        Assertions.assertEquals(k, TestData.case1Ans().length);
+        Assertions.assertEquals(k, ans.length);
         Assertions.assertTrue(
                 areArraysEqual(
-                        Arrays.copyOfRange(given, 0, k), TestData.case1Ans()
+                        Arrays.copyOfRange(given, 0, k), ans
                 )
         );
     }
 
+    @Test
+    void case2() {
+        int[] given = TestData.case2Given();
+        int[] ans = TestData.case2Ans();
+        int k = rdfsa.removeDuplicates(given);
+        Assertions.assertEquals(k, ans.length);
+        Assertions.assertTrue(
+                areArraysEqual(
+                        Arrays.copyOfRange(given, 0, k), ans
+                )
+        );
+    }
 
     public boolean areArraysEqual(int[] array1, int[] array2) {
         HashSet<Integer> set1 = new HashSet<>();
