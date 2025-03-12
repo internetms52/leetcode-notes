@@ -18,5 +18,10 @@
       <version>5.11.4</version>
       <scope>test</scope>
     </dependency>
+    <dependency>
+      <groupId>io.github.internetms52</groupId>
+      <artifactId>leetcode-validation</artifactId>
+      <version>0.1.5</version>
+    </dependency>
   </dependencies>
 </project>

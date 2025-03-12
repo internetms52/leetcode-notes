@@ -1,5 +1,6 @@
 package io.github.internetms52;
 
+import hobby.internetms52.leetcode.validation.ArrayValidation;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -16,7 +17,7 @@ public class RemoveDuplicatesFromSortedArrayTest {
         int k = rdfsa.removeDuplicates(given);
         Assertions.assertEquals(k, ans.length);
         Assertions.assertTrue(
-                areArraysEqual(
+                ArrayValidation.areEquivalent(
                         Arrays.copyOfRange(given, 0, k), ans
                 )
         );
@@ -29,29 +30,10 @@ public class RemoveDuplicatesFromSortedArrayTest {
         int k = rdfsa.removeDuplicates(given);
         Assertions.assertEquals(k, ans.length);
         Assertions.assertTrue(
-                areArraysEqual(
+                ArrayValidation.areEquivalent(
                         Arrays.copyOfRange(given, 0, k), ans
                 )
         );
-    }
-
-    public boolean areArraysEqual(int[] array1, int[] array2) {
-        HashSet<Integer> set1 = new HashSet<>();
-        HashSet<Integer> set2 = new HashSet<>();
-
-        if (array1.length != array2.length) {
-            return false;
-        }
-
-        for (int num : array1) {
-            set1.add(num);
-        }
-
-        for (int num : array2) {
-            set2.add(num);
-        }
-
-        return set1.equals(set2);
     }
 
 }
