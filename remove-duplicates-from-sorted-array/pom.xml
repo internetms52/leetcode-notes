@@ -22,6 +22,7 @@
       <groupId>io.github.internetms52</groupId>
       <artifactId>leetcode-validation</artifactId>
       <version>0.1.5</version>
+      <scope>test</scope>
     </dependency>
   </dependencies>
 </project>
