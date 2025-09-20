@@ -21,3 +21,5 @@ Explanation: 7/-3 = -2.33333.. which is truncated to -2.
 -231 <= dividend, divisor <= 231 - 1
 divisor != 0
 
+## learn:
+建議還是用位移來作，用減法的時間複雜度是O(商的大小)，然候要處理的溢位的東西相當複雜，很不划算。

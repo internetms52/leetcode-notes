@@ -29,4 +29,16 @@ public class DivideTwoIntegersTest {
         int k = divideTwoIntegers.divide(-2147483648, -1);
         Assertions.assertEquals(k, 2147483647);
     }
+
+    @Test
+    void case5() {
+        int k = divideTwoIntegers.divide(2147483647, -2147483648);
+        Assertions.assertEquals(k, 0);
+    }
+
+    @Test
+    void case6() {
+        int k = divideTwoIntegers.divide(-2147483648, -1);
+        Assertions.assertEquals(k, 0);
+    }
 }
