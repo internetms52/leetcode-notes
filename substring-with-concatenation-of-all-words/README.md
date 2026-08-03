@@ -1,71 +1,49 @@
-# 13. Roman to Integer
-Roman numerals are represented by seven different symbols: I, V, X, L, C, D and M.
+# 30. Substring with Concatenation of All Words
+You are given a string s and an array of strings words. All the strings of words are of the same length.
 
-For example, 2 is written as II in Roman numeral, just two ones added together. 12 is written as XII, which is simply X + II. The number 27 is written as XXVII, which is XX + V + II.
+A concatenated string is a string that exactly contains all the strings of any permutation of words concatenated.
 
-Roman numerals are usually written largest to smallest from left to right. However, the numeral for four is not IIII. Instead, the number four is written as IV. Because the one is before the five we subtract it making four. The same principle applies to the number nine, which is written as IX. There are six instances where subtraction is used:
+For example, if words = ["ab","cd","ef"], then "abcdef", "abefcd", "cdabef", "cdefab", "efabcd", and "efcdab" are all concatenated strings. "acdbef" is not a concatenated string because it is not the concatenation of any permutation of words.
+Return an array of the starting indices of all the concatenated substrings in s. You can return the answer in any order.
 
-I can be placed before V (5) and X (10) to make 4 and 9.
-X can be placed before L (50) and C (100) to make 40 and 90.
-C can be placed before D (500) and M (1000) to make 400 and 900.
-Given a roman numeral, convert it to an integer.
+## Example1:
+Input: s = "barfoothefoobarman", words = ["foo","bar"]
+Output: [0,9]
+
+Explanation:
+The substring starting at 0 is "barfoo". It is the concatenation of ["bar","foo"] which is a permutation of words.
+The substring starting at 9 is "foobar". It is the concatenation of ["foo","bar"] which is a permutation of words.
 
 ## Example2:
-Input: s = "LVIII"
-Output: 58
-Explanation: L = 50, V= 5, III = 3.
+Input: s = "wordgoodgoodgoodbestword", words = ["word","good","best","word"]
+Output: []
 
 ## Example3:
-Input: s = "MCMXCIV"
-Output: 1994
-Explanation: M = 1000, CM = 900, XC = 90 and IV = 4.
+Input: s = "barfoofoobarthefoobarman", words = ["bar","foo","the"]
+Output: [6,9,12]
 
-## Thinking:
+## Thinking Example3:
 ### Word Mapping
-| 1   | 5   | 10   | 50   | 100   | 500   | 1000 |
-|-----| --- | ---  | ---  | ---   | ---   | ---  |
-| I   | V   | X   | L   | C   | D   | M   |      |
+| b   | a   | r   | f   | o   | o   | f   | o   | o   | b   | a   | r   | t   | h   | e   | f   | o   | o   | b   | a   | r   | m | a | n|
+|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|
+| 1   | 1   | 1   | 2   | 2   | 2   | 2   | 2   | 2   | 1   | 1   | 1   | 3   | 3   | 3   | 2   | 2   | 2   | 1   | 1   | 1   |0|0|0|
 
-### mapping 1:
-```
-I  I  I
-|  |  |---> 1
-|  |------> 1
-|---------> 1
-```
-### mapping 2:
-```
-I  V
-|  |------> 5
-|---------> 1
-(5-1)
-```
+### resultIdxArr
+[0][0]="0,9,18" \
+[0][1]="1,10,19" \
+[0][2]="2,11,20" 
 
-### general mapping check 3:
-```
-L  V  I  I
-|  |  |  |------> 1
-|  |  |---------> 1
-|  |------------> 5
-|---------------> 50
-50+5+1+1=58
-```
+[1][0]="3,6,15" \
+[1][1]="4,7,16" \ 
+[1][2]="5,8,17" 
 
-### complex mapping check 4:
-```
-M  C  D  L  X  X  V  I
-|  |  |  |  |  |  |  |-------> 1  
-|  |  |  |  |  |  |----------> 5
-|  |  |  |  |  |-------------> 10
-|  |  |  |  |----------------> 10
-|  |  |  |-------------------> 50
-|  |  |----------------------> 500
-|  |-------------------------> 100 
-|----------------------------> 1000
-1000+(500-100)+50+10+10+5+1=1476
-```
+[2][0]="12" \
+[2][1]="13" \
+[2][2]="14"
 
-### rules
-- 所有的規則看起來都可以兩個字兩個字讀取來解決
-- 倒序看起來對於規則4 or 9更方便
-- 不一定要用map，可以用index取代，因為index對應的內容實際上大的也是比較大
+### 困難點
+1. 答案字串可以重疊判定(如Example3)
+2. 字串需要連續判定，中間不能插入其它的(Example1)
+3. 記錄是否包含該字不夠，還要知道是哪一個字
+4. 解答判定時，光確認該字不夠，還要確認是否包含該字的每一個字元
+
