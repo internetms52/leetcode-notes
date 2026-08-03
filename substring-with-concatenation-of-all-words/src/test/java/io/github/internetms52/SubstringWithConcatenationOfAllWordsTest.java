@@ -10,10 +10,18 @@ public class SubstringWithConcatenationOfAllWordsTest {
 
     @Test
     void case1() {
-        List<Integer> resultList = swcoaw.findSubstring("barfoothefoobarman", new String[]{"foo", "bar"});
+        List<Integer> resultList = swcoaw.findSolution("barfoothefoobarman", new String[]{"foo", "bar"});
         List<String> resultStringList = resultList.stream().map(String::valueOf).toList();
         String result = String.join(",", resultStringList);
         Assertions.assertEquals("0,9",result);
+    }
+
+    @Test
+    void case2(){
+        List<Integer> resultList = swcoaw.findSolution("barfoofoobarthefoobarman", new String[]{"bar","foo","the"});
+        List<String> resultStringList = resultList.stream().map(String::valueOf).toList();
+        String result = String.join(",", resultStringList);
+        Assertions.assertEquals("6,9,12",result);
     }
 
 }
