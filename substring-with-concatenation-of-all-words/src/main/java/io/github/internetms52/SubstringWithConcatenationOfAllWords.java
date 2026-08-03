@@ -10,8 +10,7 @@ public class SubstringWithConcatenationOfAllWords {
         int[] traverseArr = genTraverseArr(s, words);
         List<Integer> resultList = new ArrayList();
 
-        int ansLength = getAnsLength(words);
-        int toIdx = ansLength;
+        int toIdx = getAnsLength(words);
         int fromIdx = 0;
         int currentIdx = 0;
         int wordCount = 0;
